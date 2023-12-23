@@ -90,9 +90,15 @@ async function main(privateKey) {
     let num = parseInt(Math.random() * (res.length))
     let res1 = await contract.voteForProject(res[num], true, { value: ethers.utils.parseEther('0') })
     console.log('${address} VOTE: https://scan.zkfair.io/tx/${res1.hash}')
+
+    // 增加交易时间间隔，例如等待 10 秒
+    await sleep(10000);    
 }
 
-
+// 等待函数
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
 async function mulVote() {
     for (const privateKey of privateKeysList) {
@@ -104,4 +110,3 @@ async function mulVote() {
 
 
 
-mulVote()
