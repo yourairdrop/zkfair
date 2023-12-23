@@ -13,7 +13,7 @@ node -v
 
 安装 ethers.js 库。在终端中运行以下命令来使用 npm 安装 ethers.js：
 
-npm install ethers
+npm install ethers@v5
 
 
 修改私钥 和 投票次数
